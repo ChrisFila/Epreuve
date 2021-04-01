@@ -1,0 +1,191 @@
+/* @import fonts from fonts.css */
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 400;
+}
+
+body {
+	background-color: #277da1;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 100vh;
+}
+
+h1, h2, h3, h4, h5 {
+	font-weight: 700;
+}
+
+.login-form {
+	width: 100%;
+	max-width: 500px;
+	background-color: #fff;
+	padding: 50px 40px;
+	border-radius: 30px;
+	background: #fff;
+	border: solid 8px #e6e6e6;
+}
+
+.login-form h1 {
+	text-align: center;
+	margin: 48px 0;
+	font-size: 36px;
+	color: #111;
+}
+
+.container {
+	display: flex;
+	justify-content: center;
+}
+
+.logo_login {
+	position: absolute;
+	height: 22vh;
+	width: 22vh;
+	top: 0px;
+	border-radius: 50%;
+	background: #277da1;
+	padding: 10px;
+	text-align: center;
+}
+
+.logo_login img {
+	height: 20vh;
+	width: 20vh;
+	border-radius: 50%;
+}
+
+.text_login {
+	margin-bottom: 12px;
+	position: relative;
+}
+
+.text_login input {
+	width: 100%;
+	height: 70px;
+	border: none;
+	background-color: #e6e6e6;
+	border-radius: 30px;
+	color: #333;
+	font-size: 1.2em;
+	font-weight: 700;
+	padding: 24px 60px 10px 30px;
+	outline: none;
+}
+.text_login input:hover {
+	opacity: .9;
+}
+
+.placeholder {
+	text-transform: uppercase;
+	font-size: 14px;
+	font-weight: 700;
+	position: absolute;
+	line-height: 70px;
+	top: 0px;
+	left: 20px;
+	color: #4b4b4b;
+	user-select: none;
+	pointer-events: none;
+}
+
+.show-password {
+	position: absolute;
+	line-height: 70px;
+	right: 30px;
+	color: #4b4b4b;
+	font-size: 22px;
+	cursor: pointer;
+}
+.show-password:hover {
+	color: #111;
+}
+
+.checkbox {
+	display: flex;
+	align-items: center;
+	position: relative;
+	font-size: 18px;
+	font-weight: 500;
+	/* TODO ajouter la font-weight 500 */
+	color: #333;
+	margin: 20px 0;
+}
+
+.checkbox input {
+	width: 24px;
+	height: 24px;
+	background-color: #e6e6e6;
+	border-radius: 4px;
+	margin-right: 10px;
+	cursor: pointer;
+	appearance: true;
+    -moz-appearance: none;
+	-webkit-appearance: none;
+	outline: none;
+}
+
+.checkbox .fa-check {
+	position: absolute;
+	color: #fff;
+	font-size: 14px;
+	width: 24px;
+	text-align: center;
+	user-select: none;
+	pointer-events: none;
+	opacity: 0;
+}
+
+.checkbox input:checked {
+	background-color: #bc252a;
+}
+
+.checkbox input:checked+.fa-check {
+	opacity: 1;
+}
+
+.btn {
+	display: block;
+	width: 200px;
+	height: 60px;
+	margin: 50px auto;
+	background-color: #bc252a;
+	color: #fff;
+	font-size: 25px;
+	font-weight: 700;
+	border: none;
+	border-radius: 30px;
+	cursor: pointer;
+	transition: .3s linear;
+	outline: none;
+}
+.btn:hover {
+	opacity: .8;
+}
+
+.login-form a {
+	display: block;
+	text-align: center;
+	text-decoration: none;
+	font-size: 16px;
+	color: #555;
+	text-transform: uppercase;
+	font-weight: 500;
+	margin-bottom: 8px;
+	transition: .2s linear;
+}
+
+.login-form a:hover {
+	color: #111;
+}
+
+.btn:disabled {
+	background-color: transparent;
+	color: #ddd;
+	border: 2px solid;
+}
