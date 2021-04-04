@@ -100,7 +100,7 @@ class LoginFormAuthenticator extends AbstractFormLoginAuthenticator implements P
             return new RedirectResponse($targetPath);
         }
 
-        $landingPage = in_array('ROLE_ADMIN', $token->getRoleNames()) ? 'comptable.homepage.index' : 'homepage.index';
+        $landingPage = 'visiteur.homepage.index';
 
         return new RedirectResponse($this->urlGenerator->generate($landingPage));
     }

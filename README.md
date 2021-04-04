@@ -42,3 +42,7 @@
 
 - Commande pour afficher les composants installés
  **composer show**
+
+
+### Gestion des branches Git
+https://github.com/Kunena/Kunena-Forum/wiki/Create-a-new-branch-with-git-and-manage-branches

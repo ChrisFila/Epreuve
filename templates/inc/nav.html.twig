@@ -10,12 +10,6 @@
 			<a href="{{ path('visiteur.homepage.index') }}" >Accueil</a>
 	{% endif %}
 
-	{% if is_granted('ROLE_ADMIN')%} {# si le role est admin #}
-		<div>
-			<a href="{{ path('comptable.homepage.index') }}" >Accueil</a>
-		</div>
-	{% endif %}
-
 	<div>
 		{% if is_granted('IS_AUTHENTICATED_FULLY') %}
 			<a href="{{ path('security.logout') }}" >Déconnexion</a>
