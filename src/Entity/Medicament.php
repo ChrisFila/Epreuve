@@ -47,6 +47,7 @@ class Medicament
      */
     private $prix_echantillon;
 
+    
     public function getId(): ?int
     {
         return $this->id;
