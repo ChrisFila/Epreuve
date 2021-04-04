@@ -16,17 +16,8 @@ class MedicamentFixtures extends Fixture
     //     ]
     // ];
 
-    // public function load(ObjectManager $manager)
-    // {
-    //     foreach($this -> list_users as $user){
-    //         $entity = new Medicament();
-    //         $entity
-    //             ->setUsername($user['username'])
-    //             ->setPassword($user['password'])
-    //             ->setRoles($user['roles']);
-
-    //         $manager->persist($entity);
-    //     }
-    //     $manager->flush();
-    // }
+    public function load(ObjectManager $manager)
+    {
+       
+    }
 }
