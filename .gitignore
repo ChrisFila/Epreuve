@@ -7,7 +7,6 @@
 /public/bundles/
 /var/
 /vendor/
-
 /composer.json
 /symfony.lock
 /composer.lock
