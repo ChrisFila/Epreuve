@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>
+            {% block title %}Connexion{% endblock %}
+        </title>
+        {% block stylesheets %}
+            <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+        {% endblock %}
+    </head>
+    <body>
+
+        <div class="container">
+            <div class="logo_login">
+                <img src="{{ asset('images/logo_gsb_2.png') }}" alt="Logo GSB">
+            </div>
+            <form action="{{ path('security.login') }}" method="post" class="login-form">
+            
+                <h1>Connexion</h1>
+                <div class="text_login">
+                    <div class="placeholder">Pseudo</div>
+                    <input type="text" value="{{ last_username }}" name="username" id="input_username" required autofocus>
+                </div>
+                
+                <div class="text_login">
+                    <input type="password" name="password" id="input_password" required>
+                    <div class="placeholder">Mot de passe</div>
+                    <div class="show-password fas fa-eye-slash"></div>
+                </div>
+
+                <div class="checkbox">
+                    <input type="checkbox" name="_remember_me" id="checkbox_remember_me">
+                    <div class="fas fa-check"></div>
+                    Se souvenir de moi
+                </div>
+
+                <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+
+                <div class="btn-container">
+                    <button class="btn" type="submit">Connexion</button>
+                </div>
+
+                {% if error %}
+                    <div class="login_error">
+                        {{ error.messageKey|trans(error.messageData, 'security') }}
+                    </div>
+                {% endif %}
+            </form>
+        </div>
+    </body>
+</html>
+

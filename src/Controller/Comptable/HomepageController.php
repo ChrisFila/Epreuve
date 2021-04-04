@@ -1,18 +1,19 @@
 <?php
 
-namespace App\Controller;
+namespace App\Controller\Comptable;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
+
+#[Route('/comptable')]
 class HomepageController extends AbstractController
 {
-    #[Route('/', name: 'homepage')]
-    public function index(): Response
+    #[Route('/homepage', name: 'comptable.homepage.index')]
+    public function index():Response
     {
-        return $this->render('homepage/index.html.twig', [
-            
-        ]);
+        return $this->render('comptable/index.html.twig');
     }
 }
+

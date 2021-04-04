@@ -87,7 +87,7 @@ h1, h2, h3, h4, h5 {
 	font-weight: 700;
 	position: absolute;
 	line-height: 70px;
-	top: 0px;
+	top: -20px;
 	left: 20px;
 	color: #4b4b4b;
 	user-select: none;
@@ -97,6 +97,7 @@ h1, h2, h3, h4, h5 {
 .show-password {
 	position: absolute;
 	line-height: 70px;
+	top: 23px;
 	right: 30px;
 	color: #4b4b4b;
 	font-size: 22px;
@@ -154,14 +155,13 @@ h1, h2, h3, h4, h5 {
 	width: 200px;
 	height: 60px;
 	margin: 50px auto;
-	background-color: #bc252a;
+	background-color: #277da1;
 	color: #fff;
 	font-size: 25px;
 	font-weight: 700;
 	border: none;
 	border-radius: 30px;
 	cursor: pointer;
-	transition: .3s linear;
 	outline: none;
 }
 .btn:hover {
@@ -188,4 +188,11 @@ h1, h2, h3, h4, h5 {
 	background-color: transparent;
 	color: #ddd;
 	border: 2px solid;
+}
+
+.login_error{
+	text-align: center;
+	background-color: #be7678;
+	color: rgb(255, 0, 0);
+	padding: 10px;
 }

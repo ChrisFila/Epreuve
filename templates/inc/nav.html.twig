@@ -1,0 +1,24 @@
+<nav class="nav_bar">
+	<div>
+		<a href="{{ path('visiteur.homepage.index') }}">
+			<img src="{{ asset('images/logo_gsb_2.png') }}" alt="GSB_logo" class="nav_logo">
+		</a>
+	</div>
+
+	{% if is_granted('ROLE_VISITEUR')%} {# si le role est visiteur #}
+		<div>
+			<a href="{{ path('visiteur.homepage.index') }}" >Accueil</a>
+	{% endif %}
+
+	{% if is_granted('ROLE_ADMIN')%} {# si le role est admin #}
+		<div>
+			<a href="{{ path('comptable.homepage.index') }}" >Accueil</a>
+		</div>
+	{% endif %}
+
+	<div>
+		{% if is_granted('IS_AUTHENTICATED_FULLY') %}
+			<a href="{{ path('security.logout') }}" >Déconnexion</a>
+		{% endif %}
+	</div>
+</nav>
