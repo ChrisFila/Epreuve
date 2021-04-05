@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\MedicamentRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -46,6 +48,16 @@ class Medicament
      * @ORM\Column(type="string", length=255)
      */
     private $famille;
+
+    /**
+     * @ORM\ManyToMany(targetEntity=CompteRendu::class, mappedBy="presentation")
+     */
+    private $compteRendus;
+
+    public function __construct()
+    {
+        $this->compteRendus = new ArrayCollection();
+    }
 
     
     public function getId(): ?int
@@ -121,6 +133,33 @@ class Medicament
     public function setFamille(string $famille): self
     {
         $this->famille = $famille;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|CompteRendu[]
+     */
+    public function getCompteRendus(): Collection
+    {
+        return $this->compteRendus;
+    }
+
+    public function addCompteRendu(CompteRendu $compteRendu): self
+    {
+        if (!$this->compteRendus->contains($compteRendu)) {
+            $this->compteRendus[] = $compteRendu;
+            $compteRendu->addPresentation($this);
+        }
+
+        return $this;
+    }
+
+    public function removeCompteRendu(CompteRendu $compteRendu): self
+    {
+        if ($this->compteRendus->removeElement($compteRendu)) {
+            $compteRendu->removePresentation($this);
+        }
 
         return $this;
     }

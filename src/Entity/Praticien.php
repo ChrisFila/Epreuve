@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\PraticienRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -46,6 +48,16 @@ class Praticien
      * @ORM\Column(type="string", length=255)
      */
     private $type;
+
+    /**
+     * @ORM\OneToMany(targetEntity=CompteRendu::class, mappedBy="praticien")
+     */
+    private $compteRendus;
+
+    public function __construct()
+    {
+        $this->compteRendus = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -120,6 +132,36 @@ class Praticien
     public function setType(string $type): self
     {
         $this->type = $type;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|CompteRendu[]
+     */
+    public function getCompteRendus(): Collection
+    {
+        return $this->compteRendus;
+    }
+
+    public function addCompteRendu(CompteRendu $compteRendu): self
+    {
+        if (!$this->compteRendus->contains($compteRendu)) {
+            $this->compteRendus[] = $compteRendu;
+            $compteRendu->setPraticien($this);
+        }
+
+        return $this;
+    }
+
+    public function removeCompteRendu(CompteRendu $compteRendu): self
+    {
+        if ($this->compteRendus->removeElement($compteRendu)) {
+            // set the owning side to null (unless already changed)
+            if ($compteRendu->getPraticien() === $this) {
+                $compteRendu->setPraticien(null);
+            }
+        }
 
         return $this;
     }
