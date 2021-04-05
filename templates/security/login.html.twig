@@ -13,22 +13,22 @@
     </head>
     <body>
 
-        <div class="container">
+        <div class="login_container">
             <div class="logo_login">
-                <img src="{{ asset('images/logo_gsb_2.png') }}" alt="Logo GSB">
+                <img src="{{ asset('images/logo_gsb.png') }}" alt="Logo GSB">
             </div>
-            <form action="{{ path('security.login') }}" method="post" class="login-form">
+            <form action="{{ path('security.login') }}" method="post" class="login_form">
             
                 <h1>Connexion</h1>
                 <div class="text_login">
                     <div class="placeholder">Pseudo</div>
-                    <input type="text" value="{{ last_username }}" name="username" id="input_username" required autofocus>
+                    <input type="text" value="{{ last_username }}" name="username" id="input_username" required>
                 </div>
                 
                 <div class="text_login">
                     <input type="password" name="password" id="input_password" required>
                     <div class="placeholder">Mot de passe</div>
-                    <div class="show-password fas fa-eye-slash"></div>
+                    <div class="show_password fas fa-eye-slash"></div>
                 </div>
 
                 <div class="checkbox">
@@ -39,7 +39,7 @@
 
                 <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
 
-                <div class="btn-container">
+                <div class="btn_container">
                     <button class="btn" type="submit">Connexion</button>
                 </div>
 

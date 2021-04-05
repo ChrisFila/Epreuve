@@ -25,11 +25,6 @@ class Medicament
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $famille;
-
-    /**
-     * @ORM\Column(type="string", length=255)
-     */
     private $composition;
 
     /**
@@ -47,6 +42,11 @@ class Medicament
      */
     private $prix_echantillon;
 
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $famille;
+
     
     public function getId(): ?int
     {
@@ -61,18 +61,6 @@ class Medicament
     public function setNomCommercial(string $nom_commercial): self
     {
         $this->nom_commercial = $nom_commercial;
-
-        return $this;
-    }
-
-    public function getFamille(): ?string
-    {
-        return $this->famille;
-    }
-
-    public function setFamille(string $famille): self
-    {
-        $this->famille = $famille;
 
         return $this;
     }
@@ -121,6 +109,18 @@ class Medicament
     public function setPrixEchantillon(int $prix_echantillon): self
     {
         $this->prix_echantillon = $prix_echantillon;
+
+        return $this;
+    }
+
+    public function getFamille(): ?string
+    {
+        return $this->famille;
+    }
+
+    public function setFamille(string $famille): self
+    {
+        $this->famille = $famille;
 
         return $this;
     }

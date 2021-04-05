@@ -5,6 +5,7 @@
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
+	list-style: none;
 	font-family: 'Open Sans', sans-serif;
 	font-weight: 400;
 }
@@ -21,7 +22,7 @@ h1, h2, h3, h4, h5 {
 	font-weight: 700;
 }
 
-.login-form {
+.login_form {
 	width: 100%;
 	max-width: 500px;
 	background-color: #fff;
@@ -31,16 +32,17 @@ h1, h2, h3, h4, h5 {
 	border: solid 8px #e6e6e6;
 }
 
-.login-form h1 {
+.login_form h1 {
 	text-align: center;
 	margin: 48px 0;
 	font-size: 36px;
 	color: #111;
 }
 
-.container {
+.login_container {
 	display: flex;
 	justify-content: center;
+	align-items: center;
 }
 
 .logo_login {
@@ -94,7 +96,7 @@ h1, h2, h3, h4, h5 {
 	pointer-events: none;
 }
 
-.show-password {
+.show_password {
 	position: absolute;
 	line-height: 70px;
 	top: 23px;
@@ -103,7 +105,7 @@ h1, h2, h3, h4, h5 {
 	font-size: 22px;
 	cursor: pointer;
 }
-.show-password:hover {
+.show_password:hover {
 	color: #111;
 }
 
@@ -168,7 +170,7 @@ h1, h2, h3, h4, h5 {
 	opacity: .8;
 }
 
-.login-form a {
+.login_form a {
 	display: block;
 	text-align: center;
 	text-decoration: none;
@@ -180,7 +182,7 @@ h1, h2, h3, h4, h5 {
 	transition: .2s linear;
 }
 
-.login-form a:hover {
+.login_form a:hover {
 	color: #111;
 }
 
@@ -190,9 +192,13 @@ h1, h2, h3, h4, h5 {
 	border: 2px solid;
 }
 
-.login_error{
+.login_error{		/*TODO à modifier */
 	text-align: center;
 	background-color: #be7678;
 	color: rgb(255, 0, 0);
 	padding: 10px;
+}
+
+nav{
+	background: blue;
 }
