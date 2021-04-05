@@ -12,12 +12,17 @@
 
 body {
 	background-color: #277da1;
-	display: flex;
-	min-height: 100vh;
 }
 
 h1, h2, h3, h4, h5 {
 	font-weight: 700;
+}
+
+.login_container{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 100vh;
 }
 
 .login_form {
@@ -35,12 +40,6 @@ h1, h2, h3, h4, h5 {
 	margin: 48px 0;
 	font-size: 36px;
 	color: #111;
-}
-
-.login_container {
-	display: flex;
-	justify-content: center;
-	align-items: center;
 }
 
 .logo_login {
@@ -195,4 +194,8 @@ h1, h2, h3, h4, h5 {
 	background-color: #be7678;
 	color: rgb(255, 0, 0);
 	padding: 10px;
+}
+
+nav{
+	background: blue;
 }
