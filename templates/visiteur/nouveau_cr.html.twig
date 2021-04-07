@@ -1,0 +1,37 @@
+{% extends "base.html.twig" %}
+{% block title %}GSB CR - Nouveau compte rendu{% endblock %}
+{% block body %}
+	<div class="row">
+		<div class="col">
+			{{  form_start(form, { attr: { novalidate: 'novalidate' } }) }}
+				<p>
+					{{ form_label(form.date_visite, 'Date de la visite :') }}
+					{{ form_widget(form.date_visite) }}
+				</p>
+				<p>
+					{{ form_label(form.praticien, 'Praticien visité :') }}
+					{{ form_widget(form.praticien) }}
+				</p>
+				<p>
+					{{ form_label(form.motif, 'Motif de la visite :') }}
+					{{ form_widget(form.motif) }}
+				</p>
+				<p>
+					{{ form_label(form.bilan, 'Bilan de la visite :') }}
+					{{ form_widget(form.bilan) }}
+				</p>
+				<h5>
+					{{ form_label(form.presentation) }}
+					{{ form_errors(form.presentation) }}
+				</h5>
+				{% for presentation in form.presentation %}
+					{{ form_errors(presentation) }}
+					{{ form_widget(presentation) }}
+					<a href="#"><i class="fas fa-plus-circle">Ajouter un médicament</i></a>
+					<a href="#"><i class="fas fa-minus-circle">Supprimer un médicament</i></a>
+				{% endfor %}
+			{{ form_end(form) }}
+		</div>
+	</div>
+		
+{% endblock %}

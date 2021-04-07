@@ -38,10 +38,10 @@ class CompteRendu
     /**
      * @ORM\Column(type="text")
      */
-    private $description;
+    private $bilan;
 
     /**
-     * @ORM\OneToMany(targetEntity=Presentation::class, mappedBy="compte_rendu", orphanRemoval=true)
+     * @ORM\OneToMany(targetEntity=Presentation::class, mappedBy="compteRendu")
      */
     private $presentation;
 
@@ -91,14 +91,14 @@ class CompteRendu
         return $this;
     }
 
-    public function getDescription(): ?string
+    public function getBilan(): ?string
     {
-        return $this->description;
+        return $this->bilan;
     }
 
-    public function setDescription(string $description): self
+    public function setBilan(string $bilan): self
     {
-        $this->description = $description;
+        $this->bilan = $bilan;
 
         return $this;
     }
@@ -106,7 +106,7 @@ class CompteRendu
     /**
      * @return Collection|Presentation[]
      */
-    public function Presentation(): Collection
+    public function getPresentation(): Collection
     {
         return $this->presentation;
     }
@@ -121,12 +121,12 @@ class CompteRendu
         return $this;
     }
 
-    public function removeMedicament(Presentation $medicament): self
+    public function removePresentation(Presentation $presentation): self
     {
-        if ($this->medicament->removeElement($medicament)) {
+        if ($this->presentation->removeElement($presentation)) {
             // set the owning side to null (unless already changed)
-            if ($medicament->getCompteRendu() === $this) {
-                $medicament->setCompteRendu(null);
+            if ($presentation->getCompteRendu() === $this) {
+                $presentation->setCompteRendu(null);
             }
         }
 

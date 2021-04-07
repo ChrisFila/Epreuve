@@ -50,16 +50,15 @@ class Medicament
     private $famille;
 
     /**
-     * @ORM\ManyToMany(targetEntity=CompteRendu::class, mappedBy="presentation")
+     * @ORM\OneToMany(targetEntity=Presentation::class, mappedBy="medicament")
      */
-    private $compteRendus;
+    private $presentations;
 
     public function __construct()
     {
-        $this->compteRendus = new ArrayCollection();
+        $this->presentations = new ArrayCollection();
     }
 
-    
     public function getId(): ?int
     {
         return $this->id;
@@ -138,27 +137,30 @@ class Medicament
     }
 
     /**
-     * @return Collection|CompteRendu[]
+     * @return Collection|Presentation[]
      */
-    public function getCompteRendus(): Collection
+    public function getPresentations(): Collection
     {
-        return $this->compteRendus;
+        return $this->presentations;
     }
 
-    public function addCompteRendu(CompteRendu $compteRendu): self
+    public function addPresentation(Presentation $presentation): self
     {
-        if (!$this->compteRendus->contains($compteRendu)) {
-            $this->compteRendus[] = $compteRendu;
-            $compteRendu->addPresentation($this);
+        if (!$this->presentations->contains($presentation)) {
+            $this->presentations[] = $presentation;
+            $presentation->setMedicament($this);
         }
 
         return $this;
     }
 
-    public function removeCompteRendu(CompteRendu $compteRendu): self
+    public function removePresentation(Presentation $presentation): self
     {
-        if ($this->compteRendus->removeElement($compteRendu)) {
-            $compteRendu->removePresentation($this);
+        if ($this->presentations->removeElement($presentation)) {
+            // set the owning side to null (unless already changed)
+            if ($presentation->getMedicament() === $this) {
+                $presentation->setMedicament(null);
+            }
         }
 
         return $this;
