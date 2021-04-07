@@ -23,7 +23,6 @@ class VisiteurController extends AbstractController
         $this->entityManagerInterface = $entityManagerInterface;
     }
     
-
     #[Route('/', name: 'visiteur.homepage.index')]
     public function index():Response
     {
