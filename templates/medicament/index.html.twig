@@ -13,9 +13,6 @@
                 <p class="alert alert-success">{{ message }}</p>
             {% endfor %}
 
-            <p class="d-flex justify-content-end">
-                <a href="{{ url ('admin.videogames.form') }}" class="btn btn-primary">Ajouter</a>
-            </p>
 
             <table class="table table-striped">
                 <tr>
@@ -26,19 +23,16 @@
                 <th>Prix échantillon</th>
                 <th>Famille</th>
                 </tr>
-                {% for medicaments in results %}
+                {% for medicament in listMedicaments %}
                     <tr>
                         
-                        <td>{{ medicament.nom_commercial }}</td>
+                        <td>{{ medicament.NomCommercial }}</td>
                         <td>{{ medicament.composition }}</td>
                         <td>{{ medicament.effets }}</td>
-                        <td>{{ medicament.contre.indications }}</td>
-                        <td>{{ medicament.prix_echantillon }}€</td>
-                        <td>{{ medicament.prix_famille }}€</td>
-                        <td>
-                            <a href="{{ url('admin.videogames.form', { id: game.id} ) }}" class="btn btn-warning">Modifier</a>
-                            <a href="#" class="btn btn-danger">Supprimer</a>
-                        </td>
+                        <td>{{ medicament.ContreIndications }}</td>
+                        <td>{{ medicament.PrixEchantillon }}€</td>
+                        <td>{{ medicament.famille }}</td>
+                       
                     </tr>
                 {% endfor %}
             </table>

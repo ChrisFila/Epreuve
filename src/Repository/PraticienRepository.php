@@ -19,5 +19,11 @@ class PraticienRepository extends ServiceEntityRepository
         parent::__construct($registry, Praticien::class);
     }
 
+    public function findAllPraticien(){
+        $qb=$this->createQueryBuilder('prat');
+
+        return $qb->getQuery()->getResult();
+    }
+
   
 }

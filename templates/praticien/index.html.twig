@@ -13,9 +13,9 @@
                 <p class="alert alert-success">{{ message }}</p>
             {% endfor %}
 
-            <p class="d-flex justify-content-end">
+         {#}   <p class="d-flex justify-content-end">
                 <a href="{{ url ('admin.videogames.form') }}" class="btn btn-primary">Ajouter</a>
-            </p>
+            </p> #}
 
             <table class="table table-striped">
                 <tr>
@@ -26,21 +26,16 @@
                 <th>Ville</th>
                 <th>type</th>
                 </tr>
-                {% for practicien in results %}
+                {% for practicien in listPraticiens %}
                     <tr>
-                        <td class="w-25">
-                            <img src="{{ asset('img/' ~ game.poster) }}" alt="" class="img-fluid">
-                        </td>
+                        
                         <td>{{ practicien.nom }}</td>
                         <td>{{ practicien.prenom }}€</td>
                         <td>{{ practicien.adresse }}</td>
-                        <td>{{ practicien.code_postal }}</td>
+                        <td>{{ practicien.CodePostal }}</td>
                         <td>{{ practicien.ville }}</td>
                         <td>{{ practicien.type }}</td>
-                        <td>
-                            <a href="{{ url('admin.videogames.form', { id: game.id} ) }}" class="btn btn-warning">Modifier</a>
-                            <a href="#" class="btn btn-danger">Supprimer</a>
-                        </td>
+                        
                     </tr>
                 {% endfor %}
             </table>

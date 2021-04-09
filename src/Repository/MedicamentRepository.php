@@ -19,6 +19,13 @@ class MedicamentRepository extends ServiceEntityRepository
         parent::__construct($registry, Medicament::class);
     }
 
+    public function findAllMedicament(){
+        $qb=$this->createQueryBuilder('med');
+        
+        return $qb->getQuery()->getResult();
+    }
+
+
     // /**
     //  * @return Medicament[] Returns an array of Medicament objects
     //  */
