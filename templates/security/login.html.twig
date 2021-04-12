@@ -21,15 +21,31 @@
             
                 <h1>Connexion</h1>
                 <div class="text_login">
-                    <div class="placeholder">Pseudo</div>
+                    <div class="placeholder">Login</div>
                     <input type="text" value="{{ last_username }}" name="username" id="input_username" required>
                 </div>
                 
                 <div class="text_login">
                     <input type="password" name="password" id="input_password" required>
                     <div class="placeholder">Mot de passe</div>
-                    <div class="show_password fas fa-eye-slash"></div>
+                    <div class="show_password fas fa-eye-slash" type="checkbox" onclick="Afficher()"></div>
                 </div>
+
+
+<script>
+function Afficher()
+{ 
+var input = document.getElementById("input_password"); 
+if (input.type === "password")
+{ 
+input.type = "text"; 
+} 
+else
+{ 
+input.type = "password"; 
+} 
+} 
+</script>               
 
                 <div class="checkbox">
                     <input type="checkbox" name="_remember_me" id="checkbox_remember_me">

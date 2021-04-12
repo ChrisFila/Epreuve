@@ -77,7 +77,7 @@ h1, h2, h3, h4, h5 {
 	outline: none;
 }
 .text_login input:hover {
-	opacity: .9;
+	
 }
 
 .placeholder {
@@ -195,3 +195,24 @@ h1, h2, h3, h4, h5 {
 	color: rgb(255, 0, 0);
 	padding: 10px;
 }
+
+th {
+
+	width: 350	px;
+	height: 60px;
+	margin: 50px auto;
+	background-color: #277da1;
+	color: #fff;
+	font-size: 25px;
+	font-weight: 700;
+	border: none;
+	border-radius: 30px;
+	cursor: pointer;
+	outline: none;
+
+
+}
+
+.pers {
+	background-color: #f44336;
+	}

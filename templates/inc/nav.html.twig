@@ -18,7 +18,7 @@
                     <a class="nav-link" aria-current="page" href="{{ path('praticien.index') }}">Praticiens</a>
                 </li>
 				<li class="nav-item">
-                    <a class="nav-link" aria-current="page" href="#">Visiteurs</a>
+                    <a class="nav-link" aria-current="page" href="{{path('visiteur.lister_users') }}">Visiteurs</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" aria-current="page" href="{{ path('medicament.index') }}">Médicaments</a>
@@ -26,7 +26,7 @@
             </ul>
 			{% if is_granted('IS_AUTHENTICATED_FULLY') %}
 				<form class="form-inline">
-					<button class="btn btn-outline-success my-2 my-sm-0" type="submit"><a href="{{ path('security.logout') }}">Déconnexion</a></button>
+					<button class="btn pers btn-outline-success my-2 my-sm-0"  type="submit"><a href="{{ path('security.logout') }}">Déconnexion</a></button>
 				</form>
 			{% endif %}
         </div>

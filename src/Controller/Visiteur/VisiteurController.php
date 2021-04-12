@@ -11,17 +11,21 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use App\Repository\UserRepository;
 
 
 #[Route('/visiteur')]
 class VisiteurController extends AbstractController
 {
     private EntityManagerInterface $entityManagerInterface;
+    private UserRepository $userRepository;
 
     public function __construct(
-        EntityManagerInterface $entityManagerInterface)
+        EntityManagerInterface $entityManagerInterface,
+        UserRepository $userRepository)
     {
         $this->entityManagerInterface = $entityManagerInterface;
+        $this->userRepository = $userRepository;
     }
     
 
@@ -56,6 +60,16 @@ class VisiteurController extends AbstractController
 
         return $this->render('visiteur/nouveau_cr.html.twig', [
             'form' => $form->createView(),
+        ]);
+    }
+
+    #[Route('/lister', name:'visiteur.lister_users')]
+    public function lister(): Response
+    {
+        $listUsers=$this->userRepository->findAllUser();
+
+        return $this->render('visiteur/lister_users.html.twig', [
+            'listUsers' => $listUsers,
         ]);
     }
 }

@@ -1,0 +1,35 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+    <div class="row">
+        <div class="col">
+            <h1>Visiteurs</h1>
+
+            {% for message in app.flashes('notice') %}
+                <p class="alert alert-success">{{ message }}</p>
+            {% endfor %}
+
+            <table class="table table-striped">
+                <tr>                   
+                    <th>Nom</th></div>
+                    <th>Prénom</th>
+                    <th>Adresse</th>
+                    <th>Code Postal</th>
+                    <th>Ville</th>
+                    <th>Date d'embauche</th>
+                </tr>
+                {% for user in listUsers %}
+                    <tr>
+                        <td>{{ user.nom }}</td>
+                        <td>{{ user.prenom }}</td>
+                        <td>{{ user.adresse }}</td>
+                        <td>{{ user.CodePostal }}</td>
+                        <td>{{ user.ville }}</td>
+                        <td>{{ user.DateEmbauche | date('d/m/Y')}}</td>
+                        
+                    </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </div>
+{% endblock %}  
