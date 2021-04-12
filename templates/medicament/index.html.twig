@@ -5,14 +5,9 @@
         <div class="col">
             <h1>Affichage des medicaments</h1>
 
-            {# 
-            affichage des messages flash
-            "notice' est la cle créée dans le controleur avec this->addflash
-             #}
             {% for message in app.flashes('notice') %}
                 <p class="alert alert-success">{{ message }}</p>
             {% endfor %}
-
 
             <table class="table table-striped">
                 <tr>
@@ -20,8 +15,8 @@
                 <th>Composition</th>
                 <th>Effets</th>
                 <th>Contre Indication</th>
-                <th>Prix échantillon</th>
                 <th>Famille</th>
+                <th>Prix échantillon</th>
                 </tr>
                 {% for medicament in listMedicaments %}
                     <tr>
@@ -30,8 +25,8 @@
                         <td>{{ medicament.composition }}</td>
                         <td>{{ medicament.effets }}</td>
                         <td>{{ medicament.ContreIndications }}</td>
-                        <td>{{ medicament.PrixEchantillon }}€</td>
                         <td>{{ medicament.famille }}</td>
+                        <td>{{ medicament.PrixEchantillon }} €</td>
                        
                     </tr>
                 {% endfor %}

@@ -69,7 +69,6 @@ class CompteRenduType extends AbstractType
                 ],
             ])
             ->add('presentation', CollectionType::class, [
-                'label' => 'Médicaments présentés :',
                 'entry_type' => PresentationType::class,
                 'by_reference' => false,
                 'entry_options' => [
@@ -77,14 +76,7 @@ class CompteRenduType extends AbstractType
                 ],
                 'allow_add' => true,
                 'allow_delete' => true
-            ])
-            ->add('save', SubmitType::class, [
-                'label' => 'Enregistrer',
-                'attr' => [
-                    'class' => 'btn btn-primary'
-                ]
-            ])
-        ;
+            ]);
     }
 
     public function configureOptions(OptionsResolver $resolver)

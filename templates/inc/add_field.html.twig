@@ -1,0 +1,15 @@
+<script type='text/javascript'>
+	
+	var medicaments_list = document.getElementById('medicaments_list');
+	var add_field = document.getElementById('add_field');
+	var remove_field = document.getElementById('remove_field');
+
+	var medicament_field = document.getElementById('compte_rendu_presentation_0_medicament');
+
+	add_field.onclick = function(){
+		var new_field = document.createElement('input');
+		new_field.setAttribute('type', 'select');
+		new_field.setAttribute('name', 'select_medicament');
+		medicaments_list.appendChild(new_field);
+	}
+</script>

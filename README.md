@@ -1,5 +1,17 @@
 # PPE3
 
+
+### Mise en route
+> composer install (respecte le verisonning du composer.lock)
+> créer un .env.local en reprennant les variables d'environnement et en les modifiant si nécessaire
+> symfony console doctrine:database:create
+> symfony console doctrine:migrations:migrate
+> ajouter le fichier sql dans la DB qui contient les données (pas la structure) via un utilitaire de gestion de BD
+> lancer la commande *symfony serve* pour lancer le projet
+> 
+> login : visiteur mdp : visiteur 
+
+
 > ### Composants installés : 
 >
 > - #### **ORM**

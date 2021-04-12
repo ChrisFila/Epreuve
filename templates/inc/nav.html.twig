@@ -12,7 +12,7 @@
                     <a class="nav-link" aria-current="page" href="{{ path('visiteur.homepage.index') }}">Accueil</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" aria-current="page"href="{{ path('visiteur.nouveau_compte_rendu') }}">Nouveau Compte Rendu</a>
+                    <a class="nav-link" aria-current="page"href="{{ path('visiteur.nouveau_compte_rendu') }}">Nouveau compte rendu</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" aria-current="page" href="{{ path('praticien.index') }}">Praticiens</a>
@@ -26,7 +26,7 @@
             </ul>
 			{% if is_granted('IS_AUTHENTICATED_FULLY') %}
 				<form class="form-inline">
-					<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Déconnexion</button>
+					<button class="btn btn-outline-success my-2 my-sm-0" type="submit"><a href="{{ path('security.logout') }}">Déconnexion</a></button>
 				</form>
 			{% endif %}
         </div>

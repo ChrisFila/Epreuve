@@ -5,32 +5,23 @@
         <div class="col">
             <h1>Practicien</h1>
 
-            {# 
-            affichage des messages flash
-            "notice' est la cle créée dans le controleur avec this->addflash
-             #}
             {% for message in app.flashes('notice') %}
                 <p class="alert alert-success">{{ message }}</p>
             {% endfor %}
 
-         {#}   <p class="d-flex justify-content-end">
-                <a href="{{ url ('admin.videogames.form') }}" class="btn btn-primary">Ajouter</a>
-            </p> #}
-
             <table class="table table-striped">
                 <tr>
-                <th>Nom</th>
-                <th>Prénom</th>
-                <th>Adresse</th>
-                <th>code_postal</th>
-                <th>Ville</th>
-                <th>type</th>
+                    <th>Nom</th>
+                    <th>Prénom</th>
+                    <th>Adresse</th>
+                    <th>Code Postal</th>
+                    <th>Ville</th>
+                    <th>Type</th>
                 </tr>
                 {% for practicien in listPraticiens %}
                     <tr>
-                        
                         <td>{{ practicien.nom }}</td>
-                        <td>{{ practicien.prenom }}€</td>
+                        <td>{{ practicien.prenom }}</td>
                         <td>{{ practicien.adresse }}</td>
                         <td>{{ practicien.CodePostal }}</td>
                         <td>{{ practicien.ville }}</td>

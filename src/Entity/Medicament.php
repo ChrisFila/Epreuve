@@ -22,7 +22,7 @@ class Medicament
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $nom_commercial;
+    private $nomCommercial;
 
     /**
      * @ORM\Column(type="string", length=255)
@@ -37,12 +37,12 @@ class Medicament
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $contre_indications;
+    private $contreIndications;
 
     /**
      * @ORM\Column(type="integer")
      */
-    private $prix_echantillon;
+    private $prixEchantillon;
 
     /**
      * @ORM\Column(type="string", length=255)
@@ -66,12 +66,12 @@ class Medicament
 
     public function getNomCommercial(): ?string
     {
-        return $this->nom_commercial;
+        return $this->nomCommercial;
     }
 
-    public function setNomCommercial(string $nom_commercial): self
+    public function setNomCommercial(string $nomCommercial): self
     {
-        $this->nom_commercial = $nom_commercial;
+        $this->nom_commercial = $nomCommercial;
 
         return $this;
     }
@@ -102,24 +102,24 @@ class Medicament
 
     public function getContreIndications(): ?string
     {
-        return $this->contre_indications;
+        return $this->contreIndications;
     }
 
-    public function setContreIndications(string $contre_indications): self
+    public function setContreIndications(string $contreIndications): self
     {
-        $this->contre_indications = $contre_indications;
+        $this->contre_indications = $contreIndications;
 
         return $this;
     }
 
     public function getPrixEchantillon(): ?int
     {
-        return $this->prix_echantillon;
+        return $this->prixEchantillon;
     }
 
-    public function setPrixEchantillon(int $prix_echantillon): self
+    public function setPrixEchantillon(int $prixEchantillon): self
     {
-        $this->prix_echantillon = $prix_echantillon;
+        $this->prix_echantillon = $prixEchantillon;
 
         return $this;
     }

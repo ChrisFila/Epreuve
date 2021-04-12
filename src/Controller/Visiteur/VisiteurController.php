@@ -5,6 +5,7 @@ namespace App\Controller\Visiteur;
 use App\Entity\CompteRendu;
 use App\Entity\Presentation;
 use App\Form\CompteRenduType;
+use App\Form\PresentationType;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -23,11 +24,13 @@ class VisiteurController extends AbstractController
         $this->entityManagerInterface = $entityManagerInterface;
     }
     
+
     #[Route('/', name: 'visiteur.homepage.index')]
     public function index():Response
     {
         return $this->render('visiteur/index.html.twig');
     }
+
 
     #[Route('/nouveau', name: 'visiteur.nouveau_compte_rendu')]
     public function nouveau_compte_rendu(Request $request):Response

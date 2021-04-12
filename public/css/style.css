@@ -149,7 +149,7 @@ h1, h2, h3, h4, h5 {
 	opacity: 1;
 }
 
-.btn {
+.button {
 	display: block;
 	width: 200px;
 	height: 60px;
@@ -163,7 +163,7 @@ h1, h2, h3, h4, h5 {
 	cursor: pointer;
 	outline: none;
 }
-.btn:hover {
+.button:hover {
 	opacity: .8;
 }
 
@@ -183,7 +183,7 @@ h1, h2, h3, h4, h5 {
 	color: #111;
 }
 
-.btn:disabled {
+.button:disabled {
 	background-color: transparent;
 	color: #ddd;
 	border: 2px solid;
@@ -194,8 +194,4 @@ h1, h2, h3, h4, h5 {
 	background-color: #be7678;
 	color: rgb(255, 0, 0);
 	padding: 10px;
-}
-
-nav{
-	background: blue;
 }
