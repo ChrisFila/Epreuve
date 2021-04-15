@@ -100,7 +100,7 @@ class LoginFormAuthenticator extends AbstractFormLoginAuthenticator implements P
             return new RedirectResponse($targetPath);
         }
 
-        $landingPage = 'visiteur.homepage.index';
+        $landingPage = 'compte_rendu.liste';
 
         return new RedirectResponse($this->urlGenerator->generate($landingPage));
     }

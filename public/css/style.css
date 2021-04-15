@@ -1,6 +1,6 @@
 /* @import fonts from fonts.css */
 
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap');
 * {
 	margin: 0;
 	padding: 0;
@@ -10,8 +10,13 @@
 	font-weight: 400;
 }
 
-body {
+body{
 	background-color: #277da1;
+}
+
+.container{
+	width: 90%;
+	margin: 0 auto;
 }
 
 h1, h2, h3, h4, h5 {
@@ -39,7 +44,7 @@ h1, h2, h3, h4, h5 {
 	text-align: center;
 	margin: 48px 0;
 	font-size: 36px;
-	color: #111;
+	color: rgb(44, 44, 44);
 }
 
 .logo_login {
@@ -68,16 +73,13 @@ h1, h2, h3, h4, h5 {
 	width: 100%;
 	height: 70px;
 	border: none;
-	background-color: #e6e6e6;
+	background-color: #e2e2e2;
 	border-radius: 30px;
 	color: #333;
 	font-size: 1.2em;
 	font-weight: 700;
 	padding: 24px 60px 10px 30px;
 	outline: none;
-}
-.text_login input:hover {
-	
 }
 
 .placeholder {
@@ -111,8 +113,7 @@ h1, h2, h3, h4, h5 {
 	align-items: center;
 	position: relative;
 	font-size: 18px;
-	font-weight: 500;
-	/* TODO ajouter la font-weight 500 */
+	font-weight: 600;
 	color: #333;
 	margin: 20px 0;
 }
@@ -120,7 +121,7 @@ h1, h2, h3, h4, h5 {
 .checkbox input {
 	width: 24px;
 	height: 24px;
-	background-color: #e6e6e6;
+	background-color: #cfcfcf;
 	border-radius: 4px;
 	margin-right: 10px;
 	cursor: pointer;
@@ -167,6 +168,12 @@ h1, h2, h3, h4, h5 {
 	opacity: .8;
 }
 
+.button:disabled {
+	background-color: transparent;
+	color: #ddd;
+	border: 2px solid;
+}
+
 .login_form a {
 	display: block;
 	text-align: center;
@@ -183,36 +190,64 @@ h1, h2, h3, h4, h5 {
 	color: #111;
 }
 
-.button:disabled {
-	background-color: transparent;
-	color: #ddd;
-	border: 2px solid;
-}
-
 .login_error{		/*TODO à modifier */
 	text-align: center;
 	background-color: #be7678;
-	color: rgb(255, 0, 0);
+	color: #ff0000;
 	padding: 10px;
 }
 
-th {
-
-	width: 350	px;
-	height: 60px;
-	margin: 50px auto;
-	background-color: #277da1;
-	color: rgb(0, 0, 0);
-	font-size: 25px;
-	font-weight: 700;
-	border: none;
-	border-radius: 30px;
-	cursor: pointer;
-	outline: none;
-
-
+/* Bouttons ajouter supprimer COMPTRE RENDU FORM */ 
+.remove_field{
+	padding: 10px;
+	background-color: rgb(255, 0, 0);
+	border-radius: 3px;
 }
 
-.pers {
-	background-color: #f44336;
-	}
+
+/* LISTES */
+.content-table {
+	background: #fff;
+	border-collapse: collapse;
+	margin: 25px 0;
+	font-size: 0.9rem;
+	border-radius: 15px 15px 0 0;
+	overflow: hidden;
+	box-shadow: 0 0 20px rgba(0, 0, 0, 0.45);
+}
+
+.content-table thead tr th{
+	color: #fff;
+	font-size: 1.1rem;
+	font-weight: 600;
+	text-align: left;
+}
+
+.content-table th, .content-table td {
+	padding: 12px 15px;
+}
+
+.content-table tbody tr {
+	border-bottom: 1px solid #dddddd;
+}
+
+.content-table tbody tr:nth-of-type(even) {
+	background: #f3f3f3;
+}
+
+
+/* NAVBAR */
+.nav-link{
+	color: #a3a3a3 !important;
+	font-weight: 600;
+	margin: 0 8px;
+}
+
+.nav-link:hover{
+	color: #fff !important;
+}
+
+.nav-disconnect{
+	text-decoration: none;
+	color: #fff;
+}

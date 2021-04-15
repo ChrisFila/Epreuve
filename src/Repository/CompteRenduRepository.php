@@ -19,6 +19,16 @@ class CompteRenduRepository extends ServiceEntityRepository
         parent::__construct($registry, CompteRendu::class);
     }
 
+    public function findAllWithUser($user)
+    {
+        $qb = $this->createQueryBuilder('cr');
+        $qb
+            ->where('cr.user = :user')
+            ->setParameter('user', $user);
+
+        return $qb->getQuery()->getResult();
+    }
+
     // /**
     //  * @return CompteRendu[] Returns an array of CompteRendu objects
     //  */

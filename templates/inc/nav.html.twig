@@ -1,34 +1,47 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-md navbar-dark bg-dark">
     <div class="container">
-        <a class="navbar-brand" href="#">
-            <img src="{{ asset('images/logo_gsb.png') }}" alt="" width="50" height="50">
-        </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler navbar-toggler-dark" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
+        <a class="navbar-brand my-2" href="{{ path('compte_rendu.liste') }}"> {# TODO ajouter lien vers 'accueil'#}
+            <img src="{{ asset('images/logo_gsb.png') }}" alt="logo_gsb" width="70" height="70">
+        </a>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <ul class="navbar-nav me-auto fs-5">
                 <li class="nav-item">
-                    <a class="nav-link" aria-current="page" href="{{ path('visiteur.homepage.index') }}">Accueil</a>
+                    <a class="nav-link" aria-current="page" href="#">Statistiques</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" aria-current="page"href="{{ path('visiteur.nouveau_compte_rendu') }}">Nouveau compte rendu</a>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Compte-rendu
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="{{ path('compte_rendu.liste') }}">Mes comptes-rendus</a>
+                        <a class="dropdown-item" href="{{ path('compte_rendu.nouveau') }}">Nouveau compte-rendu</a>
+                    </div>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" aria-current="page" href="{{ path('praticien.index') }}">Praticiens</a>
-                </li>
-				<li class="nav-item">
-                    <a class="nav-link" aria-current="page" href="{{path('visiteur.lister_users') }}">Visiteurs</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" aria-current="page" href="{{ path('medicament.index') }}">Médicaments</a>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Listes
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="{{ path('praticien.liste') }}">Praticiens</a>
+                        <a class="dropdown-item" href="{{ path('visiteur.liste') }}">Visiteurs</a>
+                        <a class="dropdown-item" href="{{ path('medicament.liste') }}">Médicaments</a>
+                    </div>
                 </li>
             </ul>
-			{% if is_granted('IS_AUTHENTICATED_FULLY') %}
-				<form class="form-inline">
-					<button class="btn pers btn-outline-success my-2 my-sm-0"  type="submit"><a href="{{ path('security.logout') }}">Déconnexion</a></button>
-				</form>
-			{% endif %}
+            
+            {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <button type="button" class="btn btn-danger"><a class="nav-disconnect" href="{{ path('security.logout') }}">Déconnexion</a></button>
+                </li>
+            </ul>
+            {% endif %}
+            
         </div>
     </div>
 </nav>

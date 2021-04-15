@@ -3,7 +3,7 @@
 {% block body %}
     <div class="row">
         <div class="col">
-            <h1>Visiteurs</h1>
+            <h1>Mes comptes-rendus</h1>
 
             {% for message in app.flashes('notice') %}
                 <p class="alert alert-success">{{ message }}</p>
@@ -11,23 +11,18 @@
 
             <table class="table table-striped">
                 <tr>                   
-                    <th>Nom</th></div>
-                    <th>Prénom</th>
+                    <th>Date visite</th></div>
+                    <th>Praticien</th>
                     <th>Adresse</th>
                     <th>Code Postal</th>
                     <th>Ville</th>
                     <th>Date d'embauche</th>
                 </tr>
-                {% for user in listUsers %}
-                    <tr>
-                        <td>{{ user.nom }}</td>
-                        <td>{{ user.prenom }}</td>
-                        <td>{{ user.adresse }}</td>
-                        <td>{{ user.CodePostal }}</td>
-                        <td>{{ user.ville }}</td>
-                        <td>{{ user.DateEmbauche | date('d/m/Y')}}</td>
+                {% for compte_rendu in liste_compte_rendu %}
+                    
+                        <p>Un Compte Rendu</p>
                         
-                    </tr>
+                    
                 {% endfor %}
             </table>
         </div>

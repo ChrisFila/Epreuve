@@ -8,22 +8,24 @@ use Symfony\Component\Routing\Annotation\Route;
 use App\Repository\MedicamentRepository;
 
 
+#[Route('/medicament')]
 class MedicamentController extends AbstractController
 { 
     public function __construct(
         MedicamentRepository $medicamentRepository)
+
     {
         $this->medicamentRepository = $medicamentRepository;
     }
 
 
-    #[Route('/medicament', name: 'medicament.index')]
+    #[Route('/liste', name: 'medicament.liste')]
     public function index(): Response
     {
-        $listMedicaments=$this->medicamentRepository->findAllMedicament();
+        $liste_medicaments = $this->medicamentRepository->findAll();
 
-        return $this->render('medicament/index.html.twig', [
-            'listMedicaments' => $listMedicaments,
+        return $this->render('medicament/liste.html.twig', [
+            'liste_medicaments' => $liste_medicaments,
         ]);
     }
 }

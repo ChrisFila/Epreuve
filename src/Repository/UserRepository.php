@@ -36,8 +36,12 @@ class UserRepository extends ServiceEntityRepository implements PasswordUpgrader
         $this->_em->flush();
     }
 
-    public function findAllUser(){
-        $qb=$this->createQueryBuilder('user');
+    public function findUserWithRole($role_visiteur){
+
+        $qb = $this->createQueryBuilder('user');
+        $qb
+            ->where('user.roles = :role_visiteur')
+            ->setParameter('role_visiteur', $role_visiteur);
 
         return $qb->getQuery()->getResult();
     }

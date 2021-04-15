@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\UserRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\UserInterface;
 
@@ -63,6 +65,16 @@ class User implements UserInterface
      * @ORM\Column(type="datetime")
      */
     private $date_embauche;
+
+    /**
+     * @ORM\OneToMany(targetEntity=CompteRendu::class, mappedBy="User")
+     */
+    private $compteRendus;
+
+    public function __construct()
+    {
+        $this->compteRendus = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -208,6 +220,36 @@ class User implements UserInterface
     public function setDateEmbauche(\DateTimeInterface $date_embauche): self
     {
         $this->date_embauche = $date_embauche;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|CompteRendu[]
+     */
+    public function getCompteRendus(): Collection
+    {
+        return $this->compteRendus;
+    }
+
+    public function addCompteRendu(CompteRendu $compteRendu): self
+    {
+        if (!$this->compteRendus->contains($compteRendu)) {
+            $this->compteRendus[] = $compteRendu;
+            $compteRendu->setUser($this);
+        }
+
+        return $this;
+    }
+
+    public function removeCompteRendu(CompteRendu $compteRendu): self
+    {
+        if ($this->compteRendus->removeElement($compteRendu)) {
+            // set the owning side to null (unless already changed)
+            if ($compteRendu->getUser() === $this) {
+                $compteRendu->setUser(null);
+            }
+        }
 
         return $this;
     }

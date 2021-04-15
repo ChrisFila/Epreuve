@@ -1,0 +1,33 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+    <div class="row">
+        <div class="col">
+            <h1>Affichage des médicaments</h1>
+            <table class="content-table">
+                <thead>
+                    <tr class="bg-dark">
+                        <th>Nom commercial</th>
+                        <th>Composition</th>
+                        <th>Effets</th>
+                        <th>Contre-indications</th>
+                        <th>Famille</th>
+                        <th>Prix échantillon</th>
+                    </tr>
+                <thead>
+                <tbody>
+                    {% for medicament in liste_medicaments %}
+                        <tr>
+                            <td>{{ medicament.NomCommercial }}</td>
+                            <td>{{ medicament.composition }}</td>
+                            <td>{{ medicament.effets }}</td>
+                            <td>{{ medicament.ContreIndications }}</td>
+                            <td>{{ medicament.famille }}</td>
+                            <td>{{ medicament.PrixEchantillon }} €</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+{% endblock %}

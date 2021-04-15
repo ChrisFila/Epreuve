@@ -3,33 +3,33 @@
 {% block body %}
     <div class="row">
         <div class="col">
-            <h1>Practicien</h1>
+            <h1>Visiteurs</h1>
 
             {% for message in app.flashes('notice') %}
                 <p class="alert alert-success">{{ message }}</p>
             {% endfor %}
 
             <table class="table table-striped">
-                <tr>
-                    <th>Nom</th>
+                <tr>                   
+                    <th>Nom</th></div>
                     <th>Prénom</th>
                     <th>Adresse</th>
                     <th>Code Postal</th>
                     <th>Ville</th>
-                    <th>Type</th>
+                    <th>Date d'embauche</th>
                 </tr>
-                {% for practicien in listPraticiens %}
+                {% for visiteur in liste_visiteurs %}
                     <tr>
-                        <td>{{ practicien.nom }}</td>
-                        <td>{{ practicien.prenom }}</td>
-                        <td>{{ practicien.adresse }}</td>
-                        <td>{{ practicien.CodePostal }}</td>
-                        <td>{{ practicien.ville }}</td>
-                        <td>{{ practicien.type }}</td>
+                        <td>{{ visiteur.nom }}</td>
+                        <td>{{ visiteur.prenom }}</td>
+                        <td>{{ visiteur.adresse }}</td>
+                        <td>{{ visiteur.CodePostal }}</td>
+                        <td>{{ visiteur.ville }}</td>
+                        <td>{{ visiteur.DateEmbauche | date('d/m/Y')}}</td>
                         
                     </tr>
                 {% endfor %}
             </table>
         </div>
     </div>
-{% endblock %}
+{% endblock %}  

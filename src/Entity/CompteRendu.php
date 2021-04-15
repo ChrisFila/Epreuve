@@ -45,6 +45,12 @@ class CompteRendu
      */
     private $presentation;
 
+    /**
+     * @ORM\ManyToOne(targetEntity=User::class, inversedBy="compteRendus")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $user;
+
     public function __construct()
     {
         $this->presentation = new ArrayCollection();
@@ -129,6 +135,18 @@ class CompteRendu
                 $presentation->setCompteRendu(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getUser(): ?User
+    {
+        return $this->user;
+    }
+
+    public function setUser(?User $user): self
+    {
+        $this->user = $user;
 
         return $this;
     }
