@@ -14,11 +14,6 @@ body{
 	background-color: #277da1;
 }
 
-.container{
-	width: 90%;
-	margin: 0 auto;
-}
-
 h1, h2, h3, h4, h5 {
 	font-weight: 700;
 }
@@ -197,11 +192,38 @@ h1, h2, h3, h4, h5 {
 	padding: 10px;
 }
 
-/* Bouttons ajouter supprimer COMPTRE RENDU FORM */ 
-.remove_field{
+
+/* COMPTRE RENDU FORM */ 
+
+.presentation {
+	margin-top: 20px;
+	display: flex;
+}
+
+.medicament_field {
+	width: 50%;
+	margin-right: 10px;
+}
+
+.quantite_field{
+	width: 30%;
+}
+
+
+.remove_field button, .add_field{
+	color: #fff;
 	padding: 10px;
-	background-color: rgb(255, 0, 0);
 	border-radius: 3px;
+	text-decoration: none;
+	font-weight: 600;
+}
+
+.remove_field button{
+	background-color: #ff0000;
+}
+
+.add_field {
+	background-color: #00681f;
 }
 
 
@@ -209,7 +231,7 @@ h1, h2, h3, h4, h5 {
 .content-table {
 	background: #fff;
 	border-collapse: collapse;
-	margin: 25px 0;
+	margin: 25px auto;
 	font-size: 0.9rem;
 	border-radius: 15px 15px 0 0;
 	overflow: hidden;
@@ -217,6 +239,7 @@ h1, h2, h3, h4, h5 {
 }
 
 .content-table thead tr th{
+	height: 90px;
 	color: #fff;
 	font-size: 1.1rem;
 	font-weight: 600;

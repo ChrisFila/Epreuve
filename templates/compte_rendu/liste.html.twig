@@ -1,30 +1,30 @@
 {% extends "base.html.twig" %}
 
 {% block body %}
-    <div class="row">
-        <div class="col">
-            <h1>Mes comptes-rendus</h1>
 
-            {% for message in app.flashes('notice') %}
-                <p class="alert alert-success">{{ message }}</p>
-            {% endfor %}
+    {% for message in app.flashes('notice') %}
+        <p class="alert alert-success">{{ message }}</p>
+    {% endfor %}
 
-            <table class="table table-striped">
-                <tr>                   
-                    <th>Date visite</th></div>
-                    <th>Praticien</th>
-                    <th>Adresse</th>
-                    <th>Code Postal</th>
-                    <th>Ville</th>
-                    <th>Date d'embauche</th>
+    <h1 class="text-center mt-5">Mes comptes-rendus</h1>
+    <table class="content-table">
+        <thead>
+            <tr class="bg-dark">                   
+                <th>Date visite</th></div>
+                <th>Praticien</th>
+                <th>Adresse</th>
+                <th>Code Postal</th>
+                <th>Ville</th>
+                <th>Date d'embauche</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for compte_rendu in liste_compte_rendu %}
+                <tr>
+                    {{ dump(compte_rendu) }}
                 </tr>
-                {% for compte_rendu in liste_compte_rendu %}
-                    
-                        <p>Un Compte Rendu</p>
-                        
-                    
-                {% endfor %}
-            </table>
-        </div>
-    </div>
+            {% endfor %}
+        </tbody>
+    </table>
+
 {% endblock %}  

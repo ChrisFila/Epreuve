@@ -1,35 +1,31 @@
 {% extends "base.html.twig" %}
 
 {% block body %}
-    <div class="row">
-        <div class="col">
-            <h1>Practicien</h1>
 
-            {% for message in app.flashes('notice') %}
-                <p class="alert alert-success">{{ message }}</p>
-            {% endfor %}
-
-            <table class="table table-striped">
+    <h1 class="text-center mt-5">Affichage des praticiens</h1>
+    <table class="content-table">
+        <thead>
+            <tr class="bg-dark">
+                <th>Nom</th>
+                <th>Prénom</th>
+                <th>Adresse</th>
+                <th>Code Postal</th>
+                <th>Ville</th>
+                <th>Type</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for practicien in liste_praticiens %}
                 <tr>
-                    <th>Nom</th>
-                    <th>Prénom</th>
-                    <th>Adresse</th>
-                    <th>Code Postal</th>
-                    <th>Ville</th>
-                    <th>Type</th>
+                    <td>{{ practicien.nom }}</td>
+                    <td>{{ practicien.prenom }}</td>
+                    <td>{{ practicien.adresse }}</td>
+                    <td>{{ practicien.CodePostal }}</td>
+                    <td>{{ practicien.ville }}</td>
+                    <td>{{ practicien.type }}</td>
                 </tr>
-                {% for practicien in liste_praticiens %}
-                    <tr>
-                        <td>{{ practicien.nom }}</td>
-                        <td>{{ practicien.prenom }}</td>
-                        <td>{{ practicien.adresse }}</td>
-                        <td>{{ practicien.CodePostal }}</td>
-                        <td>{{ practicien.ville }}</td>
-                        <td>{{ practicien.type }}</td>
-                        
-                    </tr>
-                {% endfor %}
-            </table>
-        </div>
-    </div>
+            {% endfor %}
+        </tbody>
+    </table>
+
 {% endblock %}
